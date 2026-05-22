@@ -1,0 +1,302 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Verdana, Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Container and Layout */
+.container {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.column {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 30px;
+    overflow-y: auto;
+}
+
+/* Left Column - Light Blue */
+.left-column {
+    background-color: #ADD8E6;
+    background: linear-gradient(135deg, #ADD8E6 0%, #E0F4FF 100%);
+    box-shadow: inset 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Right Column - Light Gray, Very Bright */
+.right-column {
+    background-color: #F5F5F5;
+    background: linear-gradient(135deg, #F5F5F5 0%, #FFFFFF 100%);
+    box-shadow: inset -2px 0 5px rgba(0, 0, 0, 0.05);
+}
+
+.content-wrapper {
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Typography */
+h1 {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #003d7a;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+}
+
+h2 {
+    font-size: 1.8em;
+    color: #003d7a;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 1.3em;
+    color: #004a94;
+    margin-bottom: 12px;
+    font-weight: bold;
+}
+
+p {
+    font-size: 1em;
+    line-height: 1.7;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Sections in Left Column */
+.mission-section,
+.address-section,
+.subscription-section {
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid #003d7a;
+}
+
+.address-section p {
+    font-size: 0.95em;
+    color: #444;
+    line-height: 1.8;
+}
+
+/* Subscription Form */
+#subscriptionForm {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#emailInput {
+    padding: 12px 15px;
+    font-size: 1em;
+    border: 2px solid #003d7a;
+    border-radius: 5px;
+    font-family: Verdana, Arial, sans-serif;
+    transition: all 0.3s ease;
+    background-color: #fff;
+}
+
+#emailInput:focus {
+    outline: none;
+    border-color: #005cb3;
+    box-shadow: 0 0 8px rgba(0, 92, 179, 0.3);
+    background-color: #f9feff;
+}
+
+#emailInput::placeholder {
+    color: #999;
+}
+
+/* Subscribe Button */
+.subscribe-btn {
+    padding: 12px 20px;
+    font-size: 1.05em;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(135deg, #003d7a 0%, #005cb3 100%);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: Verdana, Arial, sans-serif;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 61, 122, 0.3);
+}
+
+.subscribe-btn:hover {
+    background: linear-gradient(135deg, #005cb3 0%, #0073e6 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 61, 122, 0.4);
+}
+
+.subscribe-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 61, 122, 0.2);
+}
+
+.subscribe-btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Form Message */
+.form-message {
+    margin-top: 12px;
+    padding: 10px 12px;
+    border-radius: 4px;
+    text-align: center;
+    font-weight: bold;
+    display: none;
+    font-size: 0.95em;
+}
+
+.form-message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    display: block;
+}
+
+.form-message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    display: block;
+}
+
+/* Right Column Content */
+.right-column h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.right-column p {
+    color: #555;
+    margin-bottom: 25px;
+}
+
+.feature-box {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-top: 3px solid #ADD8E6;
+    transition: all 0.3s ease;
+}
+
+.feature-box:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.feature-box h3 {
+    color: #003d7a;
+    margin-bottom: 10px;
+}
+
+.feature-box p {
+    font-size: 0.95em;
+    color: #666;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        min-height: auto;
+    }
+
+    .column {
+        min-height: 50vh;
+        padding: 30px 20px;
+    }
+
+    .left-column {
+        min-height: auto;
+    }
+
+    .right-column {
+        min-height: auto;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    h3 {
+        font-size: 1.1em;
+    }
+
+    .content-wrapper {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .column {
+        padding: 20px 15px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    h2 {
+        font-size: 1.3em;
+    }
+
+    h3 {
+        font-size: 1em;
+    }
+
+    .mission-section,
+    .address-section,
+    .subscription-section {
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+
+    #emailInput,
+    .subscribe-btn {
+        font-size: 16px;
+        padding: 10px 12px;
+    }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ADD8E6;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #003d7a;
+}
